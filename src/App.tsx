@@ -1,13 +1,22 @@
-import { Button } from 'react-daisyui'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+import TeamsPage from './pages/teams.tsx'
+import LeaderboardPage from './pages/leaderboard.tsx'
+import { Link } from 'react-daisyui'
 
 function App() {
   return (
-    <div className={'w-full h-full flex justify-center items-center py-10'}>
-      <div>
-        <h1 className={'text-3xl'}>Scoreboard</h1>
-        <Button>Hello</Button>
+    <Router>
+      <div className={'w-full flex justify-center gap-12 p-6'}>
+        <Link href={'/'}>Leaderboard</Link>
+        <Link href={'/teams'}>Teams</Link>
       </div>
-    </div>
+
+      <Routes>
+        <Route path={'/'} element={<LeaderboardPage />} />
+        <Route path={'/teams'} element={<TeamsPage />} />
+      </Routes>
+    </Router>
   )
 }
 
