@@ -15,5 +15,5 @@
 
 html,
 body {
-  @apply bg-white min-h-screen;
+  @apply bg-[#f4f4f4] min-h-screen;
 }

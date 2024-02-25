@@ -1,20 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import TeamsPage from './pages/teams.tsx'
+import ResultsPage from './pages/results.tsx'
 import LeaderboardPage from './pages/leaderboard.tsx'
-import { Link } from 'react-daisyui'
+
+import { Nav } from './components/nav'
 
 function App() {
   return (
     <Router>
-      <div className={'w-full flex justify-center gap-12 p-6'}>
-        <Link href={'/'}>Leaderboard</Link>
-        <Link href={'/teams'}>Teams</Link>
-      </div>
+      <Nav />
 
       <Routes>
         <Route path={'/'} element={<LeaderboardPage />} />
-        <Route path={'/teams'} element={<TeamsPage />} />
+        <Route path={'/results'} element={<ResultsPage />} />
       </Routes>
     </Router>
   )
