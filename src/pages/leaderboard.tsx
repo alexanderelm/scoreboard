@@ -1,5 +1,7 @@
 import { StatsCard } from '../components/game-card'
-import { getStats, teams } from '../data/data.ts'
+
+import { getStats } from '../utils/getStats.ts'
+import { teams } from '../data/teams.ts'
 
 export default function LeaderboardPage() {
   const stats = teams.map((data) => getStats(data.id)).sort((a, b) => b.points - a.points)

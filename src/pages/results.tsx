@@ -1,5 +1,6 @@
-import { firstRoundGames, secondRoundGames, teams } from '../data/data.ts'
 import { Badge } from 'react-daisyui'
+import { teams } from '../data/teams.ts'
+import { firstRoundGames, secondRoundGames } from '../data/games.ts'
 
 export default function ResultsPage() {
   return (
