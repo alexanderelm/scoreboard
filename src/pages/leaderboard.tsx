@@ -4,9 +4,8 @@ import { getStats } from '../utils/getStats.ts'
 import { teams } from '../data/teams.ts'
 
 export default function LeaderboardPage() {
-  const stats = teams.map((data) => getStats(data.id)).sort((a, b) => b.points - a.points)
-
-  console.log(stats)
+  /** Sort teams by points */
+  const rankedTeams = teams.map((data) => getStats(data.id)).sort((a, b) => b.points - a.points)
 
   return (
     <>
@@ -16,7 +15,7 @@ export default function LeaderboardPage() {
 
       <div className={'flex justify-center mx-8 py-8'}>
         <div className={'max-w-6xl space-y-4'}>
-          {stats.map(({ name, games, winRate, points, wins, losses }, index) => {
+          {rankedTeams.map(({ name, games, winRate, points, wins, losses }, index) => {
             return (
               <StatsCard
                 key={index}

@@ -25,7 +25,7 @@ export const getStats = (teamid: number) => {
     losses: matches.length - wins,
     winRate: winRate,
     games: matches.length,
-    points: wins * 3,
+    points: wins,
     name: teamName,
   }
 }
